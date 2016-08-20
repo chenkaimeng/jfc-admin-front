@@ -1,0 +1,9 @@
+@import 'variables';
+@import 'mixin';
+body {min-width: $min-width;}
+
+.head {
+    @include main-layout($head-height);
+    top: 0;
+    background-image: url('/static/admin/img/topbg.gif');
+}
