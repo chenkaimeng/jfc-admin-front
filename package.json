@@ -1,7 +1,7 @@
 {
-  "name": "jdxk",
+  "name": "jfc",
   "version": "1.0.0",
-  "description": "jdxk",
+  "description": "jfc",
   "scripts": {
     "clean": "rm -rf dist",
     "compile": "webpack",
@@ -13,13 +13,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://101.200.80.75/chenluyang/jdxk-front.git"
+    "url": "git@github.com:chenkaimeng/jfc-admin-front.git"
   },
-  "author": "chenluyang",
+  "author": "chenkaimeng",
   "license": "MIT",
-  "homepage": "https://teacher.aixuehuisi.com",
+  "homepage": "http://localhost:3010",
   "dependencies": {
-    "angular": "^1.4.5",
+    "angular": "^1.5.8",
     "angular-ui-router": "^0.2.15",
     "jwt-decode": "^1.1.1",
     "lodash": "^3.10.1",

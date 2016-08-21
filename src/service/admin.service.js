@@ -5,7 +5,10 @@ class AdminService {
     }
 
     getAdmin() {
-            return {username : 'admin'};
+        return {
+            id: 1,
+            username : 'admin'
+        };
     }
 }
 

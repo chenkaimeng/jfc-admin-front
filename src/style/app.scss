@@ -1,9 +1,135 @@
 @import 'variables';
 @import 'mixin';
-body {min-width: $min-width;}
+body {
+    min-width: $min-width;
+    font-size: 9pt;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+
+dd,ul,li {
+    margin: 0;
+    padding: 0;
+}
+ul,li {
+    list-style: none;
+}
 
 .head {
     @include main-layout($head-height);
     top: 0;
     background-image: url('/static/admin/img/topbg.gif');
+    .left {
+        width: 320px;
+        height: $head-height;
+        background: url('/static/admin/img/topleft.jpg') no-repeat;
+        float: left;
+        img {margin-top: 12px; margin-left: 10px;}
+    }
+    .right {
+        height: $head-height;
+        background: url('/static/admin/img/topright.jpg') no-repeat right;
+        float: right;
+        a {float:right; height:13px; width:26px; font-size:13px; color:#FFD6AF; margin-top:18px; margin-right:21px}
+        .user {
+            height: 30px;
+            background: url('/static/admin/img/ub1.png') repeat-x;
+            clear: both;
+            margin-top: 10px;
+            float: right;
+            margin-right: 12px;
+            border-radius: 30px;
+            span {
+                display: inline-block;
+                padding-right: 10px;
+                background: url('/static/admin/img/user.png') no-repeat 15px 10px;
+                line-height: 30px;
+                font-size: 14px;
+                color: #fff;
+                padding-left: 35px;
+            }
+        }
+    }
+}
+
+.body {
+    @include main-layout(100%);
+    top: $head-height;
+    bottom: $foot-height;
+    .left {
+        float:left;
+        width:$menu-width;
+        background-color:#fff3e1;
+        height:100%;
+        border-right: solid 1px #ebb683;
+        .title {
+            background: url("/static/admin/img/lefttop.gif") repeat-x;
+            height: 40px;
+            color: #fff;
+            font-size: 14px;
+            line-height: 40px;
+            span {
+                margin-left: 8px;
+                margin-top: 10px;
+                margin-right: 8px;
+                background: url("/static/admin/img/leftico.png") no-repeat;
+                width: 20px;
+                height: 21px;
+                float: left;
+            }
+        }
+        .menu {
+            overflow: hidden;
+            margin: 0;
+            dd {
+                background: url("/static/admin/img/leftmenubg.gif") repeat-x;
+                line-height: $menu-item-height;
+                font-weight: bold;
+                cursor: pointer;
+                .ico {
+                    float: left;
+                    height: $menu-item-height;
+                    width: 36px;
+                    background: url("/static/admin/img/leftico01.png") no-repeat 12px center;
+                }
+                .children {
+                    line-height: 30px;
+                    display: block;
+                    li {
+                        display: block;
+                        i {
+                            display: block;
+                            float: left;
+                            margin-left: 32px;
+                            background: url("/static/admin/img/list.gif") no-repeat;
+                            width: 16px;
+                            height: 16px;
+                            margin-top: 7px;
+                        }
+                        a { display: block;}
+                    }
+                }
+            }
+        }
+    }
+    .right {
+        margin-left: $menu-width;
+        width: 100%;
+        .place {
+            height: 40px;
+            background: url("/static/admin/img/righttop.gif") repeat-x;
+            span {line-height: 40px; font-weight: bold; float: left; margin-left: 12px; color: #dc4e00;}
+        }
+    }
+}
+
+.foot {
+    background: #F9ECD9;
+    @include main-layout($foot-height);
+    position: fixed;
+    bottom: 0px;
+    border-top: solid 1px #ECCAAA;
+    line-height: 30px;
+    color: #101112;
 }

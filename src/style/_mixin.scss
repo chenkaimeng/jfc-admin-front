@@ -1,4 +1,5 @@
 @mixin main-layout($height) {
         height: $height;
+        width: 100%;
         position: absolute;
 }

@@ -1,8 +1,7 @@
 import {app_module, controller_module, service_module} from '../config/module.config'
 
-export default class AdminController {
+class AdminController {
     constructor($scope, AdminService) {
-        $scope.admin = AdminService.getAdmin();
     }
 }
 
