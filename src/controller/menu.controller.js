@@ -2,14 +2,19 @@ import {app_module, controller_module, service_module} from '../config/module.co
 import * as menu from "../constants/menu"
 
 class MenuController {
-    constructor($scope) {
+    constructor($scope, $state) {
         $scope.menu_tree = menu.menu_tree;
-        $scope.active_item = '';
-        $scope.active = function(name) {
-            $scope.active_item = name;
+        $scope.active_parent_item = '首页';
+        $scope.active_child_item = '';
+        $scope.parentClick = function(name) {
+            $scope.active_parent_item = name;
+        }
+        $scope.childClick = function(child) {
+            $scope.active_child_item = child.name;
+            $state.go("app." + child.state);
         }
     }
 }
 
-MenuController.$inject = ['$scope'];
+MenuController.$inject = ['$scope', '$state'];
 controller_module.controller("MenuController", MenuController);

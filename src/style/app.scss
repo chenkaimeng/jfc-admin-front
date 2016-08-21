@@ -120,6 +120,16 @@ ul,li {
             height: 40px;
             background: url("/static/admin/img/righttop.gif") repeat-x;
             span {line-height: 40px; font-weight: bold; float: left; margin-left: 12px; color: #dc4e00;}
+            ul{
+                li {
+                    float: left;
+                    line-height: 40px;
+                    padding-left: 7px;
+                    padding-right: 12px;
+                    background: url('/static/admin/img/rlist.gif') no-repeat right;
+                    &:last-child {background: none;}
+                }
+            }
         }
     }
 }

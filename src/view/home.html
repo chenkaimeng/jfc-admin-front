@@ -18,23 +18,28 @@
         </div>
         <dl class="menu" ng-controller="MenuController">
             <dd ng-repeat="item in menu_tree">
-                <div ng-click="active(item.name)">
+                <div ng-click="parentClick(item.name)">
                     <span class="ico"></span>
                     {{item.name}}
                 </div>
-                <ul class="children" ng-show="active_item == item.name">
-                    <li ng-repeat="child in item.children">
+                <ul class="children" ng-show="active_parent_item == item.name">
+                    <li ng-repeat="child in item.children" ng-click="childClick(child)">
                         <i></i>
-                        <a>{{child}}</a>
+                        <a>{{child.name}}</a>
                     </li>
                 <ul>
             </dd>
         </dl>
     </div>
     <div class="right">
-        <div class="place">
+        <div class="place" ng-controller="MenuController">
             <span>位置：</span>
+            <ul>
+                <li ng-if="active_parent_item">{{active_parent_item}}</li>
+                <li ng-if="active_child_item">{{active_child_item}}</li>
+            </ul>
         </div>
+        <ui-view></ui-view>
     </div>
 </div>
 <div class="foot"></div>

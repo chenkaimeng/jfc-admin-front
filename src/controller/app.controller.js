@@ -4,7 +4,7 @@ class AppController {
     constructor($scope, $state, AdminService) {
         $scope.admin = AdminService.getAdmin();
         if ($scope.admin && $scope.admin.id) {
-            $state.go('home');
+            $state.go('app.welcome');
         } else {
             $state.go('login');
         }

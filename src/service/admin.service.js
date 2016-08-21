@@ -5,9 +5,12 @@ class AdminService {
     }
 
     getAdmin() {
+        // return null;
         return {
             id: 1,
-            username : 'admin'
+            username : 'admin',
+            lastLoginTime: 1471784477662,
+            lastLoginIp: '1.1.1.1'
         };
     }
 }
