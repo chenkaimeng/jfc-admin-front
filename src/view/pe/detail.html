@@ -1,0 +1,224 @@
+<input ng-if="pe.id" ng-model="pe.id" type="hidden">
+<div class="formbody">
+    <div class="formtitle"><span>填写私募信息</span></div>
+    <ul class="forminfo">
+        <li>
+            <label>私募类型</label>
+            <cite>
+                <input name="pe_type" type="radio" value="0" ng-model="pe.type">&nbsp;海外基金&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="pe_type" type="radio" value="1" ng-model="pe.type">&nbsp;股权基金
+            </cite>
+        </li>
+        <li>
+            <label>主标题</label>
+            <input type="text" class="dfinput" ng-model="pe.mainTitle" placeholder="请输入主标题名称">
+        </li>
+        <li>
+            <label>副标题</label>
+            <input type="text" class="dfinput" ng-model="pe.secondTitle" placeholder="请输入副标题名称">
+        </li>
+        <li>
+            <label>投资最小金额</label>
+            <input type="text" class="dfinput" ng-model="pe.minInvest" placeholder="请输入金额数目，必须为数字">&nbsp;元
+        </li>
+        <li>
+            <label>募集总额</label>
+            <input type="text" class="dfinput" ng-model="pe.totalAmount" placeholder="请输入募集总额，必须为数字">&nbsp;元
+        </li>
+        <li>
+            <label>收益类型</label>
+            <cite>
+                <input name="income_type" type="radio" value="0" ng-model="pe.incomeType">&nbsp;浮动收益&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="income_type" type="radio" value="1" ng-model="pe.incomeType">&nbsp;固定收益
+            </cite>
+        </li>
+        <li ng-show="pe.incomeType == 0">
+            <label>私募图片</label>
+            <cite>
+                <input type=hidden ng-model="pe.image">
+                <input type="file"><br>
+                <div>
+                    <img src="{{pe.image}}"/>
+                </div>
+            </cite>
+        </li>
+        <span ng-show="pe.incomeType == 1">
+            <li>
+                <label>100万的收益率</label>
+                <input type="text" class="dfinput" ng-model="pe.stableIncomeDetail.rate100" placeholder="请输入收益比率">&nbsp;%
+                <i class="txt-impt">必须为数字</i>
+            </li>
+            <li>
+                <label>300万的收益率</label>
+                <input type="text" class="dfinput" ng-model="pe.stableIncomeDetail.rate300" placeholder="请输入收益比率">&nbsp;%
+                <i class="txt-impt">必须为数字</i>
+            </li>
+            <li>
+                <label>&gt;=1000万收益率</label>
+                <input type="text" class="dfinput" ng-model="pe.stableIncomeDetail.rate300" placeholder="请输入收益比率">&nbsp;%
+                <i class="txt-impt">必须为数字</i>
+            </li>
+        </span>
+        <li>
+            <label>管理机构</label>
+            <input type="text" class="dfinput" ng-model="pe.manageAgency" placeholder="请输入机构名称">
+            <i class="txt-impt">管理机构名称</i>
+        </li>
+        <li>
+            <label>投资期限</label>
+            <input type="text" class="dfinput" ng-model="pe.investPeriod" placeholder="请输入投资期限年">&nbsp;年
+        </li>
+        <li>
+            <label>投资期限描述</label>
+            <input type="text" class="dfinput" investPeriodDesc="pe.investPeriodDesc" placeholder="请输入投资期限描述">
+            <i class="txt-impt">投资期限描述，如：5+3+1+1</i>
+        </li>
+        <li>
+            <label>首期款金额</label>
+            <input type="text" class="dfinput" ng-model="pe.downpayment" placeholder="请输入首期款金额">
+        </li>
+        <li>
+            <label>管理费</label>
+            <input type="text" class="dfinput" ng-model="pe.managementCost" placeholder="请输入管理费">
+        </li>
+        <li>
+            <label>已预约资金总额</label>
+            <input type="text" class="dfinput" ng-model="pe.orderedAmount" placeholder="请输入已预约资金总额">
+        </li>
+        <li>
+            <label>预约人数总额</label>
+            <input type="text" class="dfinput" ng-model="pe.orderedPersonCount" placeholder="请输入预约人数总额">
+        </li>
+        <li>
+            <label>预计签约日期</label>
+            <input type="text" class="dfinput" value="2013-07-25 16:26:55" placeholder="选择预计签约日期">
+        </li>
+        <li>
+            <label>签约起点日期</label>
+            <input name="p_pe_order_pay_start_time" type="text" class="dfinput" id="p_pe_order_pay_start_time" value="2013-07-25 16:26:55" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',skin:'twoer',charset:'gb2312'})" placeholder="请输入签约日期起点">
+        </li>
+        <li>
+            <label>签约终点日期</label>
+            <input class="dfinput" type="text" name="p_pe_order_pay_end_time" id="p_pe_order_pay_end_time" value="2013-08-20 16:27:13" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',skin:'twoer',charset:'gb2312'})" placeholder="请输入签约日期终点">
+        </li>
+        <li>
+            <label>预约起点时间</label>
+            <input name="p_pe_order_start_time" type="text" class="dfinput" id="p_pe_order_start_time" value="2013-07-25 16:26:55" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',skin:'twoer',charset:'gb2312'})" placeholder="请输入预约日期起点">
+        </li>
+        <li>
+            <label>预约终点时间</label>
+            <input name="p_pe_order_end_time" type="text" class="dfinput" id="p_pe_order_end_time" value="2013-08-20 16:27:13" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',skin:'twoer',charset:'gb2312'})" placeholder="请输入预约时间终点">
+        </li>
+        <li>
+            <label>公司点评</label>
+            <input name="p_pe_comment" type="text" class="dfinput" id="p_pe_comment" value="40500000" placeholder="请输入公司点评">
+        </li>
+        <li>
+            <label>产品简称</label>
+            <input name="p_pe_short_name" type="text" class="dfinput" id="p_pe_short_name" value="恒安兴" placeholder="请输入产品简称">
+        </li>
+        <li>
+            <label>产品代码</label>
+            <input name="p_pe_code" type="text" class="dfinput" id="p_pe_code" value="7" placeholder="请输入产品代码">
+        </li>
+        <li>
+            <label>最低增加投资</label>
+            <input name="p_pe_invest_add_min" type="text" class="dfinput" id="p_pe_invest_add_min" value="1000000" placeholder="请输入最低增加投资">
+        </li>
+        <li>
+            <label>资金用途</label>
+            <input name="p_pe_money_use" type="text" class="dfinput" id="p_pe_money_use" value="补充公司流动资金； 西贝尔酒店用品新业务拓展资金需求。" placeholder="请输入资金用途">
+        </li>
+        <li>
+            <label>还款来源</label>
+            <input name="p_pe_repay_source" type="text" class="dfinput" id="p_pe_repay_source" value="上市退出； 并购及同业转售； 分红； 股权回购。" placeholder="请输入还款来源">
+        </li>
+        <li>
+            <label>联系人手机号</label>
+            <input name="p_pe_phone" type="text" class="dfinput" id="p_pe_phone" value="18915113168" placeholder="请输入联系人手机号">
+        </li>
+        <li>
+            <label>风险提示</label>
+            <textarea type="text" class="dfinput"></textarea>
+       </li>
+        <li>
+            <label>基金年报</label>
+            <textarea type="text" class="dfinput"></textarea>
+        </li>
+        <li>
+            <label>更多详情</label>
+            <textarea type="text" class="dfinput"></textarea>
+        </li>
+        <li>
+            <label>基金期限</label>
+            <textarea type="text" class="dfinput"></textarea>
+        </li>
+        <li>
+            <label>投资回报率</label>
+            <textarea type="text" class="dfinput"></textarea>
+        </li>
+        <li>
+            <label>币种</label>
+            <cite>
+                <input name="p_pe_money_type" type="radio" value="0" checked="\&quot;checked\&quot;">&nbsp;人民币&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="p_pe_money_type" type="radio" value="1">&nbsp;美元&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="p_pe_money_type" type="radio" value="2">&nbsp;澳币&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="p_pe_money_type" type="radio" value="3">&nbsp;港币
+            </cite>
+        </li>
+        <li>
+            <label>募集方式</label>
+            <cite>
+                <input name="p_pe_raise_source" type="radio" value="0">&nbsp;私募基金&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="p_pe_raise_source" type="radio" value="1" checked="\&quot;checked\&quot;/">&nbsp;公募基金
+            </cite>
+        </li>
+        <li>
+            <label>产品类型</label>
+            <cite>
+                <input name="p_pe_product_type" type="radio" value="0" checked="\&quot;checked\&quot;/">&nbsp;类固定收益&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="p_pe_product_type" type="radio" value="1">&nbsp;现金&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="p_pe_product_type" type="radio" value="2">&nbsp;二级市场&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="p_pe_product_type" type="radio" value="3">&nbsp;另类投资&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="p_pe_product_type" type="radio" value="4">&nbsp;组合投资
+            </cite>
+        </li>
+        <li>
+            <label>风险等级</label>
+            <cite>
+                <input name="p_pe_venture_level" type="radio" value="0">&nbsp;R1-安全型&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="p_pe_venture_level" type="radio" value="1">&nbsp;R2-保守型&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="p_pe_venture_level" type="radio" value="2">&nbsp;R3-稳健型&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="p_pe_venture_level" type="radio" value="3">&nbsp;R4-积极型&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="p_pe_venture_level" type="radio" value="4" checked="\&quot;checked\&quot;/">&nbsp;R5-激进型
+            </cite>
+        </li>
+        <li>
+            <label>募集状态</label>
+            <cite>
+                <input name="p_pe_status" type="radio" value="0">&nbsp;待审&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="p_pe_status" type="radio" value="1">&nbsp;预售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="p_pe_status" type="radio" value="2">&nbsp;在售&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="p_pe_status" type="radio" value="3">&nbsp;热销&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="p_pe_status" type="radio" value="4" checked="\&quot;checked\&quot;/">&nbsp;售罄&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="p_pe_status" type="radio" value="4">&nbsp;结束&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="p_pe_status" type="radio" value="5">&nbsp;废弃
+            </cite>
+        </li>
+        <li>
+            <label>退出方式</label>
+            <cite>
+                <input name="p_pe_quit_type" type="radio" value="0" checked="\&quot;checked\&quot;/">&nbsp;债券退出&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="p_pe_quit_type" type="radio" value="1">&nbsp;A轮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="p_pe_quit_type" type="radio" value="2">&nbsp;B轮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="p_pe_quit_type" type="radio" value="3">&nbsp;IPO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="p_pe_quit_type" type="radio" value="4">&nbsp;并购
+            </cite>
+        </li>
+        <li>
+            <label>&nbsp;</label>
+            <input type="button" value="确认保存" class="btn">
+            &nbsp;&nbsp;&nbsp; <a href="javascript:void(0)" ng-click="attr.path=['私募管理', '私募列表'];$state.go('app.pes.list')">返回列表</a>
+        </li>
+    </ul>
+</div>
