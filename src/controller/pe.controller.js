@@ -12,6 +12,10 @@ class PeController {
         if ($state.includes('app.pes.detail')) {
             this.getPeDetail(1);
         }
+        $scope.datePickerOpen = {
+            expectSignTimeOpen: false,
+            signStartTimeOpen: false,
+        }
     }
 
     getPePageList(pageNo) {

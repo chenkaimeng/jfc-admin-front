@@ -45,7 +45,7 @@ class PeService {
             manageAgency: '北京嘉富诚股权投资基金管理有限公司',  //代理机构
             investPeriod: 5.0, //投资期限
             investPeriodDesc: '3+2', //期限说明
-            downpaymen: 100000, //首期款金额
+            downpayment: 100000, //首期款金额
             managementCost: 4, //管理费用
             orderedAmount: 500000, //已预约资金总额
             orderedPersonCount: 50, //预约人数总额

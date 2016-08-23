@@ -70,7 +70,7 @@
         </li>
         <li>
             <label>投资期限描述</label>
-            <input type="text" class="dfinput" investPeriodDesc="pe.investPeriodDesc" placeholder="请输入投资期限描述">
+            <input type="text" class="dfinput" ng-model="pe.investPeriodDesc" placeholder="请输入投资期限描述">
             <i class="txt-impt">投资期限描述，如：5+3+1+1</i>
         </li>
         <li>
@@ -91,23 +91,23 @@
         </li>
         <li>
             <label>预计签约日期</label>
-            <input type="text" class="dfinput" value="2013-07-25 16:26:55" placeholder="选择预计签约日期">
+            <input type="text" class="dfinput" ng-model="pe.expectSignTime" date-converter placeholder="选择预计签约日期" uib-datepicker-popup="'yyyy:MM:dd HH:mm:ss'" datepicker-options="{formatYear: 'yyyy',startingDay: 1}" is-open="datePickerOpen.expectSignTimeOpen" ng-focus="datePickerOpen.expectSignTimeOpen = true">
         </li>
         <li>
             <label>签约起点日期</label>
-            <input name="p_pe_order_pay_start_time" type="text" class="dfinput" id="p_pe_order_pay_start_time" value="2013-07-25 16:26:55" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',skin:'twoer',charset:'gb2312'})" placeholder="请输入签约日期起点">
+            <input type="text" class="dfinput" ng-model="pe.signStartTime" date-converter placeholder="请输入签约日期起点">
         </li>
         <li>
             <label>签约终点日期</label>
-            <input class="dfinput" type="text" name="p_pe_order_pay_end_time" id="p_pe_order_pay_end_time" value="2013-08-20 16:27:13" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',skin:'twoer',charset:'gb2312'})" placeholder="请输入签约日期终点">
+            <input type="text" class="dfinput" ng-model="pe.signEndTime" date-converter placeholder="请输入签约日期终点">
         </li>
         <li>
             <label>预约起点时间</label>
-            <input name="p_pe_order_start_time" type="text" class="dfinput" id="p_pe_order_start_time" value="2013-07-25 16:26:55" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',skin:'twoer',charset:'gb2312'})" placeholder="请输入预约日期起点">
+            <input type="text" class="dfinput" ng-model="pe.orderStartTime" date-converter placeholder="请输入预约日期起点">
         </li>
         <li>
             <label>预约终点时间</label>
-            <input name="p_pe_order_end_time" type="text" class="dfinput" id="p_pe_order_end_time" value="2013-08-20 16:27:13" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',skin:'twoer',charset:'gb2312'})" placeholder="请输入预约时间终点">
+            <input type="text" class="dfinput" ng-model="pe.orderEndTime" date-converter placeholder="请输入预约时间终点">
         </li>
         <li>
             <label>公司点评</label>

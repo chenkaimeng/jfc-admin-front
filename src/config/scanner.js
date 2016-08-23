@@ -8,5 +8,7 @@ import '../controller/pe.controller'
 
 import '../filters/date.filter'
 
+import '../directive/date.converter'
+
 import '../service/admin.service'
 import '../service/pe.service'
