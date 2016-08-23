@@ -1,1 +1,20 @@
-<div>欢迎页</div>
+<div class="welcome">
+    <div class="welinfo">
+        <span class="sun"></span>
+        <b>{{admin.username}}，欢迎使用 后台管理系统 </b>
+    </div>
+    <div class="welinfo">
+        <span class="time"></span>
+        <i>您上次登录的时间：{{admin.lastLoginTime | FormatDate:0:'-':':'}}</i>  &nbsp;&nbsp;登陆IP地址为：{{admin.lastLoginIp}}
+    </div>
+    <div class="welinfo line">
+        <span class="alert"></span>
+        <b>信息管理系统使用指南</b>
+    </div>
+    <ul class="infolist">
+        <li>
+            <span>您可以快速进行基金发布管理操作</span>
+            <a class="ibtn" target="rightFrame" ng-click="attr.path=['私募管理', '私募列表'];$state.go('app.pes.list')">发布或管理</a>
+        </li>
+   </ul>
+</div>

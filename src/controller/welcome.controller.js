@@ -8,3 +8,11 @@ class WelcomeController {
 
 WelcomeController.$inject = ['$scope'];
 controller_module.controller('WelcomeController', WelcomeController);
+
+app_module.config(function($stateProvider, $urlRouterProvider){
+    $stateProvider.state('app.welcome', {
+        url: 'welcome',
+        template: require('../view/welcome.html'),
+        controller: 'WelcomeController'
+    });
+});

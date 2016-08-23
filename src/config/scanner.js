@@ -6,4 +6,7 @@ import '../controller/menu.controller'
 import '../controller/welcome.controller'
 import '../controller/pe.controller'
 
+import '../filters/date.filter'
+
 import '../service/admin.service'
+import '../service/pe.service'

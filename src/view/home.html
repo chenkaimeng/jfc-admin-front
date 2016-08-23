@@ -1,6 +1,6 @@
 <div class="head">
     <div class="left">
-        <a ui-sref="index">
+        <a href="javascript:void(0)" ui-sref="app.welcome">
             <img src="static/admin/img/logo.png"/>
         </a>
     </div>
@@ -32,11 +32,10 @@
         </dl>
     </div>
     <div class="right">
-        <div class="place" ng-controller="MenuController">
+        <div class="place">
             <span>位置：</span>
             <ul>
-                <li ng-if="active_parent_item">{{active_parent_item}}</li>
-                <li ng-if="active_child_item">{{active_child_item}}</li>
+                <li ng-repeat="item in attr.path">{{item}}</li>
             </ul>
         </div>
         <ui-view></ui-view>

@@ -3,14 +3,14 @@ import * as menu from "../constants/menu"
 
 class MenuController {
     constructor($scope, $state) {
+        $scope.$state = $state;
         $scope.menu_tree = menu.menu_tree;
         $scope.active_parent_item = '首页';
-        $scope.active_child_item = '';
         $scope.parentClick = function(name) {
             $scope.active_parent_item = name;
         }
         $scope.childClick = function(child) {
-            $scope.active_child_item = child.name;
+            $scope.attr.path = [$scope.active_parent_item, child.name];
             $state.go("app." + child.state);
         }
     }

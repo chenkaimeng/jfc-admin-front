@@ -1,111 +1,64 @@
 @import 'variables';
 @import 'mixin';
-body {
-    min-width: $min-width;
-    font-size: 9pt;
-    margin: 0px;
-    border: 0px;
-    padding: 0px;
-}
+body {   min-width: $min-width;   font-size: 9pt;   margin: 0px;   border: 0px;   padding: 0px;}
 
-dd,ul,li {
-    margin: 0;
-    padding: 0;
-}
-ul,li {
-    list-style: none;
-}
+dd,ul,li {   margin: 0;   padding: 0;}
+ul,li {   list-style: none;}
+.fleft {float: left;}
+table { border-collapse: collapse;   border-spacing: 0;  }
+a {text-decoration: none;   color: #000;   outline: none; &:hover{color: #EB5409;} }
+cite {font-style: normal;}
 
 .head {
     @include main-layout($head-height);
     top: 0;
     background-image: url('/static/admin/img/topbg.gif');
     .left {
-        width: 320px;
-        height: $head-height;
-        background: url('/static/admin/img/topleft.jpg') no-repeat;
-        float: left;
+        width: 320px;   height: $head-height;   background: url('/static/admin/img/topleft.jpg') no-repeat;   float: left;
         img {margin-top: 12px; margin-left: 10px;}
     }
     .right {
-        height: $head-height;
-        background: url('/static/admin/img/topright.jpg') no-repeat right;
-        float: right;
+        height: $head-height;   background: url('/static/admin/img/topright.jpg') no-repeat right;   float: right;
         a {float:right; height:13px; width:26px; font-size:13px; color:#FFD6AF; margin-top:18px; margin-right:21px}
         .user {
-            height: 30px;
-            background: url('/static/admin/img/ub1.png') repeat-x;
-            clear: both;
-            margin-top: 10px;
-            float: right;
-            margin-right: 12px;
-            border-radius: 30px;
+            height: 30px;   background: url('/static/admin/img/ub1.png') repeat-x;   clear: both;
+            margin-top: 10px;   float: right;   margin-right: 12px;   border-radius: 30px;
             span {
-                display: inline-block;
-                padding-right: 10px;
-                background: url('/static/admin/img/user.png') no-repeat 15px 10px;
-                line-height: 30px;
-                font-size: 14px;
-                color: #fff;
-                padding-left: 35px;
+                display: inline-block;   padding-right: 10px;   background: url('/static/admin/img/user.png') no-repeat 15px 10px;
+                line-height: 30px;   font-size: 14px;   color: #fff;   padding-left: 35px;
             }
         }
     }
 }
 
 .body {
-    @include main-layout(100%);
-    top: $head-height;
-    bottom: $foot-height;
+    @include main-layout(auto);   top: $head-height;   bottom: $foot-height;    overflow: hidden;
+
     .left {
-        float:left;
-        width:$menu-width;
-        background-color:#fff3e1;
-        height:100%;
-        border-right: solid 1px #ebb683;
+        float:left;   width:$menu-width;   background-color:#fff3e1;  border-right: solid 1px #ebb683;  height: 100%;
         .title {
-            background: url("/static/admin/img/lefttop.gif") repeat-x;
-            height: 40px;
-            color: #fff;
-            font-size: 14px;
-            line-height: 40px;
+            background: url("/static/admin/img/lefttop.gif") repeat-x;   height: 40px;   color: #fff;   font-size: 14px;   line-height: 40px;
             span {
-                margin-left: 8px;
-                margin-top: 10px;
-                margin-right: 8px;
-                background: url("/static/admin/img/leftico.png") no-repeat;
-                width: 20px;
-                height: 21px;
-                float: left;
+                margin-left: 8px;   margin-top: 10px;   margin-right: 8px;   background: url("/static/admin/img/leftico.png") no-repeat;
+                width: 20px;   height: 21px;   float: left;
             }
         }
         .menu {
-            overflow: hidden;
-            margin: 0;
+            overflow: hidden;   margin: 0;
             dd {
-                background: url("/static/admin/img/leftmenubg.gif") repeat-x;
-                line-height: $menu-item-height;
-                font-weight: bold;
-                cursor: pointer;
+                background: url("/static/admin/img/leftmenubg.gif") repeat-x;   line-height: $menu-item-height;
+                font-weight: bold;   cursor: pointer;
                 .ico {
-                    float: left;
-                    height: $menu-item-height;
-                    width: 36px;
+                    float: left;   height: $menu-item-height;   width: 36px;
                     background: url("/static/admin/img/leftico01.png") no-repeat 12px center;
                 }
                 .children {
-                    line-height: 30px;
-                    display: block;
+                    line-height: 30px;   display: block;
                     li {
                         display: block;
                         i {
-                            display: block;
-                            float: left;
-                            margin-left: 32px;
+                            display: block;   float: left;   margin-left: 32px;       width: 16px;   height: 16px;   margin-top: 7px;
                             background: url("/static/admin/img/list.gif") no-repeat;
-                            width: 16px;
-                            height: 16px;
-                            margin-top: 7px;
                         }
                         a { display: block;}
                     }
@@ -114,32 +67,124 @@ ul,li {
         }
     }
     .right {
-        margin-left: $menu-width;
-        width: 100%;
+        position: absolute;   left: $menu-width; right: 0; overflow: scroll; height: 100%;
         .place {
-            height: 40px;
-            background: url("/static/admin/img/righttop.gif") repeat-x;
+            height: 40px;   background: url("/static/admin/img/righttop.gif") repeat-x;
             span {line-height: 40px; font-weight: bold; float: left; margin-left: 12px; color: #dc4e00;}
             ul{
                 li {
-                    float: left;
-                    line-height: 40px;
-                    padding-left: 7px;
-                    padding-right: 12px;
+                    float: left;   line-height: 40px;   padding-left: 7px;   padding-right: 12px;
                     background: url('/static/admin/img/rlist.gif') no-repeat right;
                     &:last-child {background: none;}
                 }
+            }
+        }
+        .welcome {
+            padding: 20px;
+            .welinfo {
+                height: 32px;   line-height: 32px;   padding-bottom: 8px;
+                &.line {padding-top: 15px; border-top: solid 1px #EADCC8; margin-top: 5px;}
+                span {
+                    float: left; height: 32px; width: 32px;
+                    &.sun {background: url('/static/admin/img/sun.png');}
+                    &.time {background: url('/static/admin/img/time.png');}
+                    &.alert {background: url('/static/admin/img/dp.png');}
+                }
+                b {padding-left: 8px;}
+                i {padding-left: 8px; font-style: normal;}
+            }
+            .infolist {
+                padding-left: 40px;   padding-bottom: 15px;
+                li {
+                    line-height: 23px;   height: 23px;   margin-bottom: 8px;
+                    span {    float: left;   display: block;   margin-right: 10px;}
+                }
+                .ibtn {
+                    background: url('/static/admin/img/ibtnbg.png') repeat-x;   border: solid 1px #bfcfe1;   height: 23px;
+                    line-height: 23px;   display: block;   float: left;   padding: 0 15px;   cursor: pointer;
+                }
+            }
+        }
+        .list-wrapper {
+            padding: 8px;
+            .btn-wrapper {
+                clear: both;   height: 35px;   margin-bottom: 8px;
+                .add-btn {
+                    line-height: 33px;   height: 33px;   border: solid 1px #dca571;   float: left;   padding-right: 10px;   margin-right: 5px;
+                    border-radius: 3px;   cursor: pointer;   background: url('/static/admin/img/add_btn_bg.gif') repeat-x;
+                    span {float: left;   margin-left: 10px;   margin-right: 5px;   margin-top: 5px;   width: 24px;   height: 24px;
+                        background: url('/static/admin/img/add_ico.png') center center no-repeat;}
+                }
+            }
+            .list-table {
+                width: 100%;    border: solid 1px #ebb683;
+                th {
+                    background: url('/static/admin/img/th.gif') repeat-x;   height: 34px;   line-height: 34px;   border-bottom: solid 1px #d7a372;
+                    text-indent: 21px;   text-align: left;
+                }
+                tr {
+                    &.odd {background: #FFF7EA;}
+                    &:hover {background: #FFDCA9;}
+                    td {line-height: 20px;   text-indent: 21px;   border-right: dotted 1px #F2BF74;}
+                    a {color: #EB5409;}
+                }
+            }
+            .pagebar {
+                position: relative;   margin-top: 10px;   padding: 0 12px;
+                .message {
+                    i {color: #EB5409;   font-style: normal;}
+                }
+                .pages {
+                    position: absolute;   right: 12px;   top: 0;
+                    .page-num {
+                        float: left;
+                        &.current {
+                            background: #f5f5f5;   cursor: default;   color: #737373;
+                            a {background: #f5f5f5;   cursor: default;   color: #737373;}
+                        }
+                        a {
+                            float: left;   width: 50px;   height: 28px;   border: 1px solid #DDD;   text-align: center;
+                            line-height: 30px;   border-left: none;   color: #EB5409;
+
+                        }
+                        &:first-child {
+                            a { border-left: 1px solid #DDD;    border-bottom-left-radius: 5px;   border-top-left-radius: 5px; }
+                        }
+                        &:last-child {
+                            a {border-bottom-right-radius: 5px;   border-top-right-radius: 5px;}
+                        }
+                    }
+                }
+            }
+        }
+        .formbody {
+            padding: 10px 18px;
+            .formtitle {
+                border-bottom: solid 1px #F0DCBE;   line-height: 35px;   position: relative;   height: 35px;   margin-bottom: 28px;
+                span {font-weight: bold;   font-size: 14px;   border-bottom: solid 3px #F99331;   float: left;   position: absolute;
+                    z-index: 100;   bottom: -1px;   padding: 0 3px;   height: 30px;   line-height: 30px;}
+            }
+            .forminfo {padding-left: 23px;
+                li {
+                    margin-bottom: 13px;   clear: both;
+                    label {
+                        width: 96px;   line-height: 34px;   display: block;   float: left;
+                    }
+                    cite {display: block;   padding-top: 10px;}
+                    .dfinput {
+                        width: 345px;   height: 32px;   line-height: 32px;   border-top: solid 1px #c3ab7d;   border-left: solid 1px #c3ab7d;   text-indent: 10px;
+                        border-right: solid 1px #e7d5ba;   border-bottom: solid 1px #e7d5ba;   background: url(/static/admin/img/inputbg.gif) repeat-x;
+                    }
+                    img {max-width: 500px}
+                }
+                .btn {    width: 137px;   height: 35px;   background: url(/static/admin/img/btnbg.png) no-repeat;   font-size: 14px;
+                    font-weight: bold;   color: #fff;   cursor: pointer; border: none;}
             }
         }
     }
 }
 
 .foot {
-    background: #F9ECD9;
-    @include main-layout($foot-height);
-    position: fixed;
-    bottom: 0px;
-    border-top: solid 1px #ECCAAA;
-    line-height: 30px;
-    color: #101112;
+    background: #F9ECD9;   @include main-layout($foot-height);   position: fixed;   bottom: 0px;
+    border-top: solid 1px #ECCAAA;   line-height: 30px;   color: #101112;
 }
