@@ -1,0 +1,44 @@
+<input ng-if="topic.id" ng-model="topic.id" type="hidden">
+<div class="formbody">
+    <div class="formtitle"><span>编辑文章信息</span></div>
+    <ul class="forminfo">
+        <li>
+            <label>文章标题</label>
+            <input type="text" class="dfinput required" placeholder="请输入文章的标题" ng-model="topic.title">
+        </li>
+        <li>
+            <label>文章作者</label>
+            <input type="text" class="dfinput required" placeholder="请输入文章的作者" ng-model="topic.author">
+        </li>
+        <li>
+            <label>文章类型</label>
+            <cite>
+                <span ng-repeat="(k, v) in topic_constants.TOPIC_CATEGORY"><input  name="topic_category" type="radio" value="{{k}}" ng-model="topic.category">{{v}}<span>
+            </cite>
+        </li>
+        <li>
+            <label>文章简介</label>
+            <textarea class="dfinput" ng-model="topic.desc"></textarea>
+        </li>
+        <li>
+            <label>文章图像</label>
+            <cite>
+                <input type="file"><br>
+                <div>
+                    <img src="{{topic.image}}">
+                </div>
+            </cite>
+        </li>
+        <li>
+            <label>文章外链接URL</label>
+            <input class="dfinput" type="text" ng-model="topic.url" placeholder="请输入访问的URL">
+            <i class="txt-impt">请输入带http:// 的外链Url地址</i>
+        </li>
+        <li>
+            <label>&nbsp;</label>
+            <input ng-if="topic && topic.id" type="button" value="确认保存" class="btn" ng-click="updateTopic(topic)">
+            <input ng-if="!topic || !topic.id" type="button" value="确认保存" class="btn" ng-click="createTopic(topic)">
+            &nbsp;&nbsp;&nbsp; <u><a href="javascript:history.go(-1)">返回列表</a></u>
+        </li>
+    </ul>
+</div>
