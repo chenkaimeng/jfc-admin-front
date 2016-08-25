@@ -16,10 +16,10 @@ export const menu_tree = [
         children: [
             {
                 name: "文章列表",
-                state: "articles.list"
+                state: "topics.list"
             },{
                 name: "添加文章",
-                state: "articles.add"
+                state: "topics.add"
             }
         ]
     },

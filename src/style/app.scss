@@ -107,13 +107,18 @@ cite {font-style: normal;}
         }
         .list-wrapper {
             padding: 8px;
-            .btn-wrapper {
+            .tools {
                 clear: both;   height: 35px;   margin-bottom: 8px;
                 .add-btn {
                     line-height: 33px;   height: 33px;   border: solid 1px #dca571;   float: left;   padding-right: 10px;   margin-right: 5px;
                     border-radius: 3px;   cursor: pointer;   background: url('/static/admin/img/add_btn_bg.gif') repeat-x;
                     span {float: left;   margin-left: 10px;   margin-right: 5px;   margin-top: 5px;   width: 24px;   height: 24px;
                         background: url('/static/admin/img/add_ico.png') center center no-repeat;}
+                }
+                select {
+                    appearance:none;    -moz-appearance:none;   -webkit-appearance:none;   height: 34px;   border: solid 1px; width: 345px;
+                    border-color: #c3ab7d #e7d5ba #e7d5ba #c3ab7d;  padding-left: 10px; border-radius: inherit;
+                    background: url(/static/admin/img/uew_icon.png) center right 5px no-repeat;
                 }
             }
             .list-table {
@@ -170,12 +175,22 @@ cite {font-style: normal;}
                     label {
                         width: 96px;   line-height: 34px;   display: block;   float: left;
                     }
-                    cite {display: block;   padding-top: 10px;}
+                    cite {
+                        display: block;   padding-top: 10px;
+                        span {
+                            padding-right:15px;
+                            input[type=radio] {margin-right: 6px;}
+                        }
+                    }
                     .dfinput {
                         width: 345px;   height: 32px;   line-height: 32px;   border-top: solid 1px #c3ab7d;   border-left: solid 1px #c3ab7d;   text-indent: 10px;
                         border-right: solid 1px #e7d5ba;   border-bottom: solid 1px #e7d5ba;   background: url(/static/admin/img/inputbg.gif) repeat-x;
                     }
                     img {max-width: 500px}
+                    [date-picker] {
+                        border: solid 1px;
+                    }
+                    textarea.dfinput {height:120px;width:600px;}
                 }
                 .btn {    width: 137px;   height: 35px;   background: url(/static/admin/img/btnbg.png) no-repeat;   font-size: 14px;
                     font-weight: bold;   color: #fff;   cursor: pointer; border: none;}

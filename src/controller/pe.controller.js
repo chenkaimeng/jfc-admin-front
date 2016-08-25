@@ -2,19 +2,17 @@ import {app_module, controller_module, service_module} from '../config/module.co
 import * as pe_constants from '../constants/pe.constants'
 
 class PeController {
-    constructor($scope, $state, PeService) {
+    constructor($scope, $state, $stateParams, PeService) {
         this.$scope = $scope;
         this.PeService = PeService;
         $scope.pe_constants = pe_constants;
+        $scope.updatePe = this.updatePe;
+        $scope.createPe = this.createPe;
         if ($state.includes('app.pes.list')) {
             this.getPePageList(1);
         }
         if ($state.includes('app.pes.detail')) {
-            this.getPeDetail(1);
-        }
-        $scope.datePickerOpen = {
-            expectSignTimeOpen: false,
-            signStartTimeOpen: false,
+            this.getPeDetail($stateParams.peId);
         }
     }
 
@@ -30,8 +28,16 @@ class PeController {
     getPeDetail(peId) {
         this.$scope.pe = this.PeService.getPe(peId);
     }
+
+    updatePe(pe) {
+        console.log(pe);
+    }
+
+    createPe(pe) {
+        console.log(pe);
+    }
 }
-PeController.$inject = ['$scope', '$state', 'PeService'];
+PeController.$inject = ['$scope', '$state', '$stateParams', 'PeService'];
 controller_module.controller('PeController', PeController);
 
 app_module.config(function($stateProvider, $urlRouterProvider) {
@@ -45,6 +51,10 @@ app_module.config(function($stateProvider, $urlRouterProvider) {
         controller: 'PeController'
     }).state('app.pes.detail',{
         url: 'detail/:peId',
+        template: require('../view/pe/detail.html'),
+        controller: 'PeController'
+    }).state('app.pes.add', {
+        url: 'add',
         template: require('../view/pe/detail.html'),
         controller: 'PeController'
     });
