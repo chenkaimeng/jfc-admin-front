@@ -28,10 +28,10 @@ export const menu_tree = [
         children: [
             {
                 name: "视频集列表",
-                state: "video_collects.list"
+                state: "albums.list"
             },{
                 name: "添加视频集",
-                state: "video_collects.add"
+                state: "albums.add"
             }
         ]
     },

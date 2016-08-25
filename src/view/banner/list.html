@@ -1,0 +1,42 @@
+<div class="list-wrapper">
+    <div class="tools">
+        <a href="javascript:void(0)" class="add-btn" ng-click="attr.path=['banner管理', '添加banner'];$state.go('app.banners.add')">
+            <span></span>添加
+        </a>
+    </div>
+    <table class="list-table">
+        <thead>
+            <tr>
+                <th>缩略图</th>
+                <th>标题</th>
+                <th>url地址</th>
+                <th>banner种类</th>
+                <th>添加时间</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="banner in banner_page_list.data" ng-class-odd="'odd'">
+                <td><img ng-src="{{banner.image}}"></td>
+                <td>{{banner.title}}</td>
+                <td>{{banner.url}} 年</td>
+                <td>{{banner_constants.BANNER_CATEGORY[banner.category]}}</td>
+                <td>{{banner.createTime | FormatDate:0:'-':':'}}</td>
+                <td>{{banner_constants.BANNER_STATE[banner.state]}}</td>
+                <td>
+                    <a href="javascript:void(0);" ng-click="attr.path=['banner管理', '编辑banner'];$state.go('app.banners.detail', {bannerId : banner.id })">编辑</a>  |
+                    <a href="javascript:void(0);"> 删除</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="pagebar">
+        <div class="message">共<i>&nbsp;{{pe_page_list.count}}&nbsp;</i>条记录，当前显示第&nbsp;<i>{{cur_page}}&nbsp;</i>页</div>
+        <ul class="pages">
+            <li ng-repeat="i in pages" class="page-num {{ cur_page == i && 'current'}}">
+                <a href="javascript:void(0);">{{i}}</a>
+            </li>
+        </ul>
+    </div>
+</div>

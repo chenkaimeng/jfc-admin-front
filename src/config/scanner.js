@@ -3,6 +3,7 @@ import '../service/admin.service'
 import '../service/pe.service'
 import '../service/topic.service'
 import '../service/video.service'
+import '../service/banner.service'
 
 import '../controller/app.controller'
 import '../controller/login.controller'
@@ -12,6 +13,7 @@ import '../controller/welcome.controller'
 import '../controller/pe.controller'
 import '../controller/topic.controller'
 import '../controller/video.controller'
+import '../controller/banner.controller'
 
 import '../filters/date.filter'
 

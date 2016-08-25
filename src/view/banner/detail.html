@@ -1,0 +1,46 @@
+<input ng-if="banner.id" ng-model="banner.id" type="hidden">
+<div class="formbody">
+    <div class="formtitle"><span>填写banner信息</span></div>
+    <ul class="forminfo">
+        <li>
+            <label>标题</label>
+            <input type="text" class="dfinput required" ng-model="banner.title">
+            <i class="txt-impt">标题不能超过30个字符</i></li>
+        <li>
+            <label>Url地址</label>
+            <input class="dfinput" type="text" placeholder="请输入访问的URL" ng-model="banner.url">
+            <i class="txt-impt">请输入带http:// 的外链Url地址</i>
+        </li>
+        <li>
+            <label>上传图片</label>
+            <cite>
+                <input type="file"><br>
+                <div>
+                    <img src="{{banner.image}}">
+                </div>
+            </cite>
+        </li>
+        <li>
+            <label>banner种类</label>
+            <cite>
+                <span ng-repeat="(k, v) in banner_constants.BANNER_CATEGORY">
+                    <input type="radio" value="{{k}}" ng-model="banner.category">{{v}}
+                <span>
+            </cite>
+        </li>
+        <li>
+            <label>是否审核</label>
+            <cite>
+                <sapn ng-repeat="(k, v) in banner_constants.BANNER_STATE">
+                    <input type="radio" value="{{k}}" ng-model="banner.state">{{v}}
+                </span>
+            </cite>
+        </li>
+        <li>
+            <label>&nbsp;</label>
+            <input ng-if="banner && banner.id" type="button" value="确认修改" class="btn">
+            <input ng-if="!banner || !banner.id" type="button" value="确认修改" class="btn">
+            &nbsp;&nbsp;&nbsp; <u><a href="javascript:history.go(-1)">返回列表</a></u>
+        </li>
+    </ul>
+</div>

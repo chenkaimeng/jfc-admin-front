@@ -4,10 +4,10 @@ class VideoService {
     constructor() {
     }
 
-    getVideoCollectPageList(pageNo) {
-        let video_collects = [];
+    getAlbumPageList(pageNo) {
+        let albums = [];
         for (var i = 1; i <= 10; i++) {
-            video_collects.push({
+            albums.push({
                 id: i,
                 title: '【老郑大讲堂】家族基金与全球资产配置',
                 videoCount: 5,
@@ -20,13 +20,13 @@ class VideoService {
         return {
             pageCount: 5,
             count: 100,
-            data: video_collects
+            data: albums
         }
     }
 
-    getVideoCollect(videoCollectId) {
+    getAlbum(albumId) {
         return {
-            id: videoCollectId,
+            id: albumId,
             title: '【老郑大讲堂】家族基金与全球资产配置',
             state: 1,
             videoCount: 5,
@@ -35,7 +35,7 @@ class VideoService {
         }
     }
 
-    getVideoPageList(videoCollectId, pageNo) {
+    getVideoPageList(albumId, pageNo) {
         let video_list = [];
         for (var i = 1; i <= 10; i++) {
             video_list.push({

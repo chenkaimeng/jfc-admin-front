@@ -1,6 +1,6 @@
 <div class="list-wrapper">
     <div class="tools">
-        <a href="javascript:void(0)" class="add-btn" ng-click="attr.path=['视频集管理', '添加视频集'];$state.go('app.video_collects.add');">
+        <a href="javascript:void(0)" class="add-btn" ng-click="attr.path=['视频集管理', '添加视频集'];$state.go('app.albums.add');">
             <span></span>添加
         </a>
     </div>
@@ -18,17 +18,17 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="video_collect in video_collect_page_list.data" ng-class-odd="'odd'">
-                <td>{{video_collect.id}}</td>
-                <td>{{video_collect.title}}</td>
-                <td>{{video_collect.videoCount}}</td>
-                <td>{{video_collect.likeCount}}</td>
-                <td>{{video_collect.collectCount}}</td>
-                <td>{{video_collect.downloadCount}}</td>
-                <td>{{video_collect.state}}</td>
+            <tr ng-repeat="album in album_page_list.data" ng-class-odd="'odd'">
+                <td>{{album.id}}</td>
+                <td>{{album.title}}</td>
+                <td>{{album.videoCount}}</td>
+                <td>{{album.likeCount}}</td>
+                <td>{{album.collectCount}}</td>
+                <td>{{album.downloadCount}}</td>
+                <td>{{album.state}}</td>
                 <td>
-                    <a href="javascript:void(0);" ng-click="attr.path=['视频集管理', '视频集列表', '视频列表'];$state.go('app.videos.list', {videoCollectId : video_collect.id });">管理视频</a>  |
-                    <a href="Javascript:void(0);" ng-click="attr.path=['视频集管理', '编辑视频集'];$state.go('app.video_collects.detail', {videoCollectId: video_collect.id})">编辑</a> |
+                    <a href="javascript:void(0);" ng-click="attr.path=['视频集管理', '视频集列表', '视频列表'];$state.go('app.videos.list', {albumId : album.id });">管理视频</a>  |
+                    <a href="Javascript:void(0);" ng-click="attr.path=['视频集管理', '编辑视频集'];$state.go('app.albums.detail', {albumId: album.id})">编辑</a> |
                     <a href="javascript:void(0);"> 删除</a>
                 </td>
             </tr>

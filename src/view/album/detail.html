@@ -1,41 +1,41 @@
-<input ng-if="video_collect.id" ng-model="video_collect.id" type="hidden">
+<input ng-if="album.id" ng-model="album.id" type="hidden">
 <div class="formbody">
     <div class="formtitle"><span>填写视频集信息</span></div>
     <ul class="forminfo">
         <li>
             <label>视频集标题</label>
-            <input type="text" class="dfinput required" placeholder="请输入视频集的标题" ng-model="video_collect.title">
+            <input type="text" class="dfinput required" placeholder="请输入视频集的标题" ng-model="album.title">
         </li>
         <li>
             <label>视频集状态</label>
             <cite>
                 <span ng-repeat="(k, v) in video_states">
-                    <input type="radio" value="{{k}}" ng-model="video_collect.state">{{v}}
+                    <input type="radio" value="{{k}}" ng-model="album.state">{{v}}
                 </span>
             </cite>
         </li>
         <li>
             <label>视频集合集数</label>
-            <input type="text" class="dfinput required" placeholder="请输入视频集的数量" ng-model="video_collect.videoCount">
+            <input type="text" class="dfinput required" placeholder="请输入视频集的数量" ng-model="album.videoCount">
         </li>
         <li>
             <label>视频集简介</label>
-            <textarea class="dfinput required" ng-model="video_collect.desc"></textarea>
+            <textarea class="dfinput required" ng-model="album.desc"></textarea>
         </li>
         <li>
             <label>视频集图片</label>
             <cite>
                 <input type="file">
                 <div>
-                    <img src="{{video_collect.image}}">
+                    <img src="{{album.image}}">
                 </div>
             </cite>
         </li>
 
         <li>
             <label>&nbsp;</label>
-            <input ng-if="video_collect && video_collect.id" type="button" value="确认保存" class="btn">
-            <input ng-if="!video_collect || !video_collect.id" type="button" value="确认保存" class="btn">
+            <input ng-if="album && album.id" type="button" value="确认保存" class="btn">
+            <input ng-if="!album || !album.id" type="button" value="确认保存" class="btn">
             &nbsp;&nbsp;&nbsp; <u><a href="javascript:history.go(-1)">返回列表</a></u>
         </li>
     </ul>

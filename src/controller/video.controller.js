@@ -8,36 +8,36 @@ class VideoController {
             0: '正常',
             1: '删除'
         }
-        if ($state.includes('app.video_collects.list')) {
-            this.getVideoCollectPageList(1);
+        if ($state.includes('app.albums.list')) {
+            this.getAlbumPageList(1);
         }
-        if ($state.includes('app.video_collects.detail')) {
-            this.getVideoCollect($stateParams.videoCollectId);
+        if ($state.includes('app.albums.detail')) {
+            this.getAlbum($stateParams.albumId);
         }
         if ($state.includes('app.videos.list')) {
-            this.getVideoPageList($stateParams.videoCollectId,1);
+            this.getVideoPageList($stateParams.albumId,1);
         }
         if ($state.includes('app.videos.detail')) {
             this.getVideo($stateParams.videoId);
         }
     }
 
-    getVideoCollectPageList(pageNo) {
+    getAlbumPageList(pageNo) {
         this.$scope.cur_page = pageNo;
-        this.$scope.video_collect_page_list = this.VideoService.getVideoCollectPageList(pageNo);
+        this.$scope.album_page_list = this.VideoService.getAlbumPageList(pageNo);
         this.$scope.pages = [];
-        for (var i = 1; i <= this.$scope.video_collect_page_list.pageCount; i++) {
+        for (var i = 1; i <= this.$scope.album_page_list.pageCount; i++) {
             this.$scope.pages.push(i);
         }
     }
 
-    getVideoCollect(videoCollectId) {
-        this.$scope.video_collect = this.VideoService.getVideoCollect(videoCollectId);
+    getAlbum(albumId) {
+        this.$scope.album = this.VideoService.getAlbum(albumId);
     }
 
-    getVideoPageList(videoCollectId, pageNo) {
+    getVideoPageList(albumId, pageNo) {
         this.$scope.cur_page = pageNo;
-        this.$scope.video_page_list = this.VideoService.getVideoPageList(videoCollectId, pageNo);
+        this.$scope.video_page_list = this.VideoService.getVideoPageList(albumId, pageNo);
         this.$scope.pages = [];
         for (var i = 1; i <= this.$scope.video_page_list.pageCount; i++) {
             this.$scope.pages.push(i);
@@ -53,37 +53,37 @@ VideoController.$inject = ['$scope', '$state', '$stateParams', 'VideoService'];
 controller_module.controller('VideoController', VideoController);
 
 app_module.config(function($stateProvider, $urlRouterProvider){
-    $stateProvider.state('app.video_collects', {
+    $stateProvider.state('app.albums', {
         abstract: true,
-        url: 'video_collects/',
+        url: 'albums/',
         template: require('../view/module.html')
-    }).state('app.video_collects.list', {
+    }).state('app.albums.list', {
         url: 'list',
-        template: require('../view/video_collect/list.html'),
+        template: require('../view/album/list.html'),
         controller: 'VideoController'
-    }).state('app.video_collects.detail', {
-        url: 'detail/:videoCollectId',
-        template: require('../view/video_collect/detail.html'),
+    }).state('app.albums.detail', {
+        url: 'detail/:albumId',
+        template: require('../view/album/detail.html'),
         controller: 'VideoController'
-    }).state('app.video_collects.add', {
+    }).state('app.albums.add', {
         url: 'add',
-        template: require('../view/video_collect/detail.html'),
+        template: require('../view/album/detail.html'),
         controller: 'VideoController'
     }).state('app.videos', {
         abstract:true,
         url: 'vidoes/',
         template: require('../view/module.html')
     }).state('app.videos.list', {
-        url: 'list/:videoCollectId',
-        template: require('../view/video_collect/video/list.html'),
+        url: 'list/:albumId',
+        template: require('../view/album/video/list.html'),
         controller: 'VideoController'
     }).state('app.videos.detail', {
         url: 'detail/:videoId',
-        template: require('../view/video_collect/video/detail.html'),
+        template: require('../view/album/video/detail.html'),
         controller: 'VideoController'
     }).state('app.videos.add', {
         url: 'add',
-        template: require('../view/video_collect/video/detail.html'),
+        template: require('../view/album/video/detail.html'),
         controller: 'VideoController'
     });
 });
