@@ -1,43 +1,37 @@
-<input ng-if="topic.id" ng-model="topic.id" type="hidden">
+<input ng-if="video.id" ng-model="video.id" type="hidden">
 <div class="formbody">
-    <div class="formtitle"><span>编辑文章信息</span></div>
+    <div class="formtitle"><span>填写视频信息</span></div>
     <ul class="forminfo">
         <li>
-            <label>文章标题</label>
-            <input type="text" class="dfinput required" placeholder="请输入文章的标题" ng-model="topic.title">
+            <label>视频标题</label>
+            <input type="text" class="dfinput required" placeholder="请输入视频的标题" ng-model="video.title">
         </li>
         <li>
-            <label>文章作者</label>
-            <input type="text" class="dfinput required" placeholder="请输入文章的作者" ng-model="topic.author">
+            <label>优酷视频嵌入代码</label>
+            <textarea class="dfinput required" ng-model="video.htmlCode"></textarea>
         </li>
         <li>
-            <label>文章类型</label>
+            <label>视频第几集</label>
+            <input type="text" class="dfinput required" placeholder="请输入视频第几集" ng-model="video.orderNum">
+        </li>
+        <li>
+            <label>视频简介</label>
+            <textarea class="dfinput required" ng-model="video.desc"></textarea>
+        </li>
+        <li>
+            <label>视频图片</label>
             <cite>
-                <span ng-repeat="(k, v) in topic_constants.TOPIC_CATEGORY"><input  name="topic_category" type="radio" value="{{k}}" ng-model="topic.category">{{v}}<span>
-            </cite>
-        </li>
-        <li>
-            <label>文章简介</label>
-            <textarea class="dfinput" ng-model="topic.desc"></textarea>
-        </li>
-        <li>
-            <label>文章图像</label>
-            <cite>
-                <input type="file"><br>
+                <input type="file">
                 <div>
-                    <img src="{{topic.image}}">
+                    <img src="{{video.image}}">
                 </div>
+
             </cite>
-        </li>
-        <li>
-            <label>文章外链接URL</label>
-            <input class="dfinput" type="text" ng-model="topic.url" placeholder="请输入访问的URL">
-            <i class="txt-impt">请输入带http:// 的外链Url地址</i>
         </li>
         <li>
             <label>&nbsp;</label>
-            <input ng-if="topic && topic.id" type="button" value="确认保存" class="btn" ng-click="updateTopic(topic)">
-            <input ng-if="!topic || !topic.id" type="button" value="确认保存" class="btn" ng-click="createTopic(topic)">
+            <input ng-if="video && video.id" type="button" value="确认保存" class="btn">
+            <input ng-if="!video || !video.id" type=button value="确认保存" class="btn">
             &nbsp;&nbsp;&nbsp; <u><a href="javascript:history.go(-1)">返回列表</a></u>
         </li>
     </ul>

@@ -10,7 +10,7 @@ class VideoService {
             video_collects.push({
                 id: i,
                 title: '【老郑大讲堂】家族基金与全球资产配置',
-                vidoeCount: 5,
+                videoCount: 5,
                 likeCount: 10,
                 collectCount: 10, //收藏次数
                 downloadCount: 10, //下载次数

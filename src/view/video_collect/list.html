@@ -1,31 +1,34 @@
 <div class="list-wrapper">
     <div class="tools">
-        <a href="javascript:void(0)" class="add-btn">
+        <a href="javascript:void(0)" class="add-btn" ng-click="attr.path=['视频集管理', '添加视频集'];$state.go('app.video_collects.add');">
             <span></span>添加
         </a>
-        <select>
-            <option value="-1" selected="selected">请选择一个文章类型</option>
-            <option ng-repeat="(k, v) in topic_constants.TOPIC_CATEGORY" value="{{k}}">{{v}}</option>
-        </select>
     </div>
     <table class="list-table">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>文章标题</th>
-                <th>文章作者</th>
-                <th>文章类型</th>
+                <th>视频集ID</th>
+                <th>视频集标题</th>
+                <th>视频集合集数</th>
+                <th>赞人数</th>
+                <th>收藏次数</th>
+                <th>下载次数</th>
+                <th>视频集状态</th>
                 <th>操作</th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="topic in topic_page_list.data" ng-class-odd="'odd'">
-                <td>{{topic.id}}</td>
-                <td>{{topic.title}}</td>
-                <td>{{topic.author}}</td>
-                <td>{{topic_constants.TOPIC_CATEGORY[topic.category]}}</td>
+            <tr ng-repeat="video_collect in video_collect_page_list.data" ng-class-odd="'odd'">
+                <td>{{video_collect.id}}</td>
+                <td>{{video_collect.title}}</td>
+                <td>{{video_collect.videoCount}}</td>
+                <td>{{video_collect.likeCount}}</td>
+                <td>{{video_collect.collectCount}}</td>
+                <td>{{video_collect.downloadCount}}</td>
+                <td>{{video_collect.state}}</td>
                 <td>
-                    <a href="javascript:void(0);" ng-click="attr.path=['文章管理', '编辑文章'];$state.go('app.topics.detail', {articleId : article.id })">编辑</a>  |
+                    <a href="javascript:void(0);" ng-click="attr.path=['视频集管理', '视频集列表', '视频列表'];$state.go('app.videos.list', {videoCollectId : video_collect.id });">管理视频</a>  |
+                    <a href="Javascript:void(0);" ng-click="attr.path=['视频集管理', '编辑视频集'];$state.go('app.video_collects.detail', {videoCollectId: video_collect.id})">编辑</a> |
                     <a href="javascript:void(0);"> 删除</a>
                 </td>
             </tr>
