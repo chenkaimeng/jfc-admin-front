@@ -1,0 +1,78 @@
+<div class="formbody">
+    <div class="formtitle"><span>会员信息</span></div>
+    <ul class="forminfo">
+        <li>
+            <label class="font-weight">姓名：</label>
+            <span class="input-line-height">gao</span>
+        </li>
+
+        <li>
+            <label class="font-weight">手机号：</label>
+            <span class="input-line-height">13520173115</span>
+        </li>
+
+        <li>
+            <label class="font-weight">性别：</label>
+            <span class="input-line-height">男</span>
+        </li>
+
+        <li>
+            <label class="font-weight">城市：</label>
+            <span class="input-line-height">beijing</span>
+        </li>
+
+        <li>
+            <label class="font-weight">公司：</label>
+            <span class="input-line-height">dd 元</span>
+        </li>
+
+        <li>
+            <label class="font-weight">邮箱：</label>
+            <span class="input-line-height">794419070@qq.com</span>
+        </li>
+
+        <li>
+            <label class="font-weight">行业：</label>
+            <span class="input-line-height">it</span>
+        </li>
+
+        <li>
+            <label class="font-weight">职务：</label>
+            <span class="input-line-height">cto</span>
+        </li>
+
+        <li>
+            <label class="font-weight">注册用户名：</label>
+            <span class="input-line-height">
+                                                            gaoshunsheng                                                </span>
+        </li>
+
+        <li>
+            <label class="font-weight">公司规模：</label>
+            <span class="input-line-height">200人以下</span>
+        </li>
+
+
+        <li>
+            <label class="font-weight">申请时间：</label>
+            <span class="input-line-height"><b>2016-01-29 15:18:59</b></span>
+        </li>
+
+        <form action="/member/update" method="post">
+            <input type="hidden" name="member_id" value="10">
+            <li>
+                <label>会员状态</label>
+                <cite>
+                    <input name="member_status" type="radio" value="0" checked="checked">&nbsp;&nbsp;待审核&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input name="member_status" type="radio" value="1">&nbsp;&nbsp;审核通过&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input name="member_status" type="radio" value="2">&nbsp;&nbsp;审核不通过
+                </cite>
+            </li>
+            <li>
+                <label>&nbsp;</label>
+                <input type="submit" value="确认编辑" class="btn" id="saveSubmitInfo">
+                &nbsp;&nbsp;&nbsp; <u><a href="javascript:history.go(-1)">返回列表</a></u>
+            </li>
+        </form>
+    </ul>
+</div>

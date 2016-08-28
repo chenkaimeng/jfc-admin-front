@@ -8,6 +8,11 @@ ul,li {   list-style: none;}
 table { border-collapse: collapse;   border-spacing: 0;  }
 a {text-decoration: none;   color: #000;   outline: none; &:hover{color: #EB5409;} }
 cite {font-style: normal;}
+.select1 {
+    appearance:none;    -moz-appearance:none;   -webkit-appearance:none;   height: 34px;   border: solid 1px; width: 345px;
+    border-color: #c3ab7d #e7d5ba #e7d5ba #c3ab7d;  padding-left: 10px; border-radius: inherit;
+    background: url(/static/admin/img/uew_icon.png) center right 5px no-repeat;
+}
 
 .head {
     @include main-layout($head-height);
@@ -115,11 +120,7 @@ cite {font-style: normal;}
                     span {float: left;   margin-left: 10px;   margin-right: 5px;   margin-top: 5px;   width: 24px;   height: 24px;
                         background: url('/static/admin/img/add_ico.png') center center no-repeat;}
                 }
-                select {
-                    appearance:none;    -moz-appearance:none;   -webkit-appearance:none;   height: 34px;   border: solid 1px; width: 345px;
-                    border-color: #c3ab7d #e7d5ba #e7d5ba #c3ab7d;  padding-left: 10px; border-radius: inherit;
-                    background: url(/static/admin/img/uew_icon.png) center right 5px no-repeat;
-                }
+
             }
             .list-table {
                 width: 100%;    border: solid 1px #ebb683;
@@ -130,7 +131,11 @@ cite {font-style: normal;}
                 tr {
                     &.odd {background: #FFF7EA;}
                     &:hover {background: #FFDCA9;}
-                    td {line-height: 20px;   text-indent: 21px;   border-right: dotted 1px #F2BF74; img {margin: 10px 20px 10px 0;width: 150px;}}
+                    td {
+                        line-height: 20px;   text-indent: 21px;   border-right: dotted 1px #F2BF74;
+                        img {margin: 10px 20px 10px 0;width: 150px;}
+                        .avatar{width: 50px;}
+                    }
                     a {color: #EB5409;}
                 }
             }
@@ -175,6 +180,7 @@ cite {font-style: normal;}
                     label {
                         width: 96px;   line-height: 34px;   display: block;   float: left;
                     }
+                    .input-line-height {line-height: 34px;}
                     cite {
                         display: block;   padding-top: 10px;
                         span {
@@ -191,10 +197,28 @@ cite {font-style: normal;}
                         border: solid 1px;
                     }
                     textarea.dfinput {height:120px;width:600px;}
+                    .toolbarbtn {
+                        margin-left: 86px;   margin-top: 30px;   text-align: left;
+                        li {
+                            background: url(/static/admin/img/toolbg.gif) repeat-x;   line-height: 33px;
+                            height: 33px;   border: solid 1px #d3dbde;   float: left;   padding-right: 10px; margin-right: 5px;   border-radius: 3px;   cursor: pointer;   clear: none;
+                            padding-left: 10px;
+                            a:hover {color: #EB5409;   text-decoration: none;}
+                            .edit {
+                                background: url(/static/admin/img/t02.png) center center no-repeat;
+                                display: inline-block; width: 24px; height: 24px;   float: left;
+                                margin-right: 5px;margin-top: 5px;
+                            }
+                        }
+                    }
+                    .center {    height: 32px;   line-height: 32px;   text-indent: 10px;   color: red;}
+                    .import {margin: 30px 0px 30px 120px;}
+
                 }
                 .btn {    width: 137px;   height: 35px;   background: url(/static/admin/img/btnbg.png) no-repeat;   font-size: 14px;
                     font-weight: bold;   color: #fff;   cursor: pointer; border: none;}
             }
+            .example {margin-left: 30px;margin-top: 50px;}
         }
     }
 }

@@ -31,7 +31,7 @@
                 <td>{{pe.contactPhone}}</td>
                 <td>{{pe_constants.COLLECT_STATE[pe.collectState]}}</td>
                 <td>
-                    <a href="javascript:void(0);" ng-click="attr.path=['私募管理', '编辑私募'];$state.go('app.pes.detail', {peId : pe.id })">编辑</a>  |
+                    <a href="javascript:void(0);" ng-click="attr.path=['私募管理', '编辑私募'];$state.go('app.pes.edit', {peId : pe.id })">编辑</a>  |
                     <a href="javascript:void(0);"> 删除</a>
                 </td>
             </tr>

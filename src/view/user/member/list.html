@@ -1,0 +1,44 @@
+<div class="list-wrapper">
+    <table class="list-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>私募基金</th>
+                <th>姓名</th>
+                <th>手机号码</th>
+                <th>性别</th>
+                <th>城市</th>
+                <th>公司</th>
+                <th>邮箱</th>
+                <th>行业</th>
+                <th>申请时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="member in member_page_list.data" ng-class-odd="'odd'">
+                <td>{{member.id}}</td>
+                <td>{{member.pe}}</td>
+                <td>{{member.realName}}</td>
+                <td>{{member.phoneNumber}}</td>
+                <td>{{member.gender}}</td>
+                <td>{{member.city}}</td>
+                <td>{{member.company}}</td>
+                <td>{{member.email}}</td>
+                <td>{{member.industry}}</td>
+                <td>{{member.applyTime}}</td>
+                <td>
+                    <a href="javascript:void(0);" ng-click="attr.path=['会员管理', '审核会员'];$state.go('app.members.edit', {memberId : member.id })">点击审核</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="pagebar">
+        <div class="message">共<i>&nbsp;{{user_page_list.count}}&nbsp;</i>条记录，当前显示第&nbsp;<i>{{cur_page}}&nbsp;</i>页</div>
+        <ul class="pages">
+            <li ng-repeat="i in pages" class="page-num {{ cur_page == i && 'current'}}">
+                <a href="javascript:void(0);">{{i}}</a>
+            </li>
+        </ul>
+    </div>
+</div>

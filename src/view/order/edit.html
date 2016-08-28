@@ -1,0 +1,53 @@
+<input ng-if="order.id" ng-model="order.id" type="hidden">
+<div class="formbody">
+    <div class="formtitle"><span>订单信息</span></div>
+    <ul class="forminfo">
+        <li>
+            <label class="font-weight">基金名称：</label>
+            <span class="input-line-height">{{order.pe}}</span>
+        </li>
+
+        <li>
+            <label class="font-weight">投资用户：</label>
+            <span class="input-line-height">{{order.username}}</span>
+        </li>
+
+        <li>
+            <label class="font-weight">客户经理用户：</label>
+            <span class="input-line-height">{{order.managerUser}}</span>
+        </li>
+
+        <li>
+            <label class="font-weight">投资金额：</label>
+            <span class="input-line-height">{{order.investAmount}}</span>
+        </li>
+
+        <li>
+            <label class="font-weight">真实交易金额：</label>
+            <span class="input-line-height">{{order.realTradeAmount}} 元</span>
+        </li>
+
+        <li>
+            <label class="font-weight">订单创建时间：</label>
+            <span class="input-line-height"><b>{{order.createTime | FormatDate:0:'-':':'}}</b></span>
+        </li>
+        <li>
+            <label>支付时间</label>
+            <input type="text" class="dfinput" placeholder="点击选择支付时间" ng-model="order.payTime" date-time date-converter view="date">
+        </li>
+        <li>
+            <label>订单状态</label>
+            <cite>
+                <span ng-repeat="(k, v) in order_states">
+                    <input type="radio" value="{{k}}" ng-model="order.state">{{v}}
+                </span>
+            </cite>
+        </li>
+        <li>
+            <label>&nbsp;</label>
+            <input type="button" value="确认编辑" class="btn">
+            &nbsp;&nbsp;&nbsp; <u><a href="javascript:history.go(-1)">返回列表</a></u>
+        </li>
+        </form>
+    </ul>
+</div>

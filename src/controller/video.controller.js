@@ -11,13 +11,13 @@ class VideoController {
         if ($state.includes('app.albums.list')) {
             this.getAlbumPageList(1);
         }
-        if ($state.includes('app.albums.detail')) {
+        if ($state.includes('app.albums.edit')) {
             this.getAlbum($stateParams.albumId);
         }
         if ($state.includes('app.videos.list')) {
             this.getVideoPageList($stateParams.albumId,1);
         }
-        if ($state.includes('app.videos.detail')) {
+        if ($state.includes('app.videos.edit')) {
             this.getVideo($stateParams.videoId);
         }
     }
@@ -61,13 +61,13 @@ app_module.config(function($stateProvider, $urlRouterProvider){
         url: 'list',
         template: require('../view/album/list.html'),
         controller: 'VideoController'
-    }).state('app.albums.detail', {
-        url: 'detail/:albumId',
-        template: require('../view/album/detail.html'),
+    }).state('app.albums.edit', {
+        url: 'edit/:albumId',
+        template: require('../view/album/edit.html'),
         controller: 'VideoController'
     }).state('app.albums.add', {
         url: 'add',
-        template: require('../view/album/detail.html'),
+        template: require('../view/album/edit.html'),
         controller: 'VideoController'
     }).state('app.videos', {
         abstract:true,
@@ -77,13 +77,13 @@ app_module.config(function($stateProvider, $urlRouterProvider){
         url: 'list/:albumId',
         template: require('../view/album/video/list.html'),
         controller: 'VideoController'
-    }).state('app.videos.detail', {
-        url: 'detail/:videoId',
-        template: require('../view/album/video/detail.html'),
+    }).state('app.videos.edit', {
+        url: 'edit/:videoId',
+        template: require('../view/album/video/edit.html'),
         controller: 'VideoController'
     }).state('app.videos.add', {
         url: 'add',
-        template: require('../view/album/video/detail.html'),
+        template: require('../view/album/video/edit.html'),
         controller: 'VideoController'
     });
 });

@@ -1,9 +1,9 @@
 <div class="list-wrapper">
     <div class="tools">
-        <a href="javascript:void(0)" class="add-btn" ng-click="attr.path=['文章管理', '编辑文章'];$state.go('app.topic.add')">
+        <a href="javascript:void(0)" class="add-btn" ng-click="attr.path=['文章管理', '编辑文章'];$state.go('app.topics.add')">
             <span></span>添加
         </a>
-        <select>
+        <select class="select1">
             <option value="-1" selected="selected">请选择一个文章类型</option>
             <option ng-repeat="(k, v) in topic_constants.TOPIC_CATEGORY" value="{{k}}">{{v}}</option>
         </select>
@@ -25,7 +25,7 @@
                 <td>{{topic.author}}</td>
                 <td>{{topic_constants.TOPIC_CATEGORY[topic.category]}}</td>
                 <td>
-                    <a href="javascript:void(0);" ng-click="attr.path=['文章管理', '编辑文章'];$state.go('app.topics.detail', {articleId : article.id })">编辑</a>  |
+                    <a href="javascript:void(0);" ng-click="attr.path=['文章管理', '编辑文章'];$state.go('app.topics.edit', {topicId : topic.id })">编辑</a>  |
                     <a href="javascript:void(0);"> 删除</a>
                 </td>
             </tr>

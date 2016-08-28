@@ -1,0 +1,40 @@
+<div class="formbody">
+    <div class="formtitle"><span>填写私募信息</span></div>
+    <ul class="forminfo">
+        <li>
+            <label>基金名称</label>
+            <input type="text" class="dfinput" placeholder="请输入基金名称">
+        </li>
+        <li>
+            <label>投资用户</label>
+            <input type="text" class="dfinput" placeholder="请输入用户名称">
+        </li>
+        <li>
+            <label>收益总额</label>
+            <input type="text" class="dfinput" placeholder="请输入收益总额">
+        </li>
+        <li>
+            <label>投资总额</label>
+            <input type="text" class="dfinput" placeholder="请输入投资总额">
+        </li>
+        <li>
+            <label>募集总额</label>
+            <input type="text" class="dfinput" ng-model="pe.totalAmount" placeholder="请输入募集总额，必须为数字">&nbsp;元
+        </li>
+        <li>
+            <label>币种</label>
+            <cite>
+                <span ng-repeat="(k, v) in CURRENCY"><input name="currency" type="radio" value="{{k}}">{{v}}</span>
+            </cite>
+        </li>
+        <li>
+            <label>起投时间</label>
+            <input type="text" class="dfinput" ng-model="pe" date-time date-converter view="date">{{v}}
+        </li>
+        <li>
+            <label>&nbsp;</label>
+            <input type="button" value="确认保存" class="btn">
+            &nbsp;&nbsp;&nbsp; <a href="javascript:void(0)">返回列表</a>
+        </li>
+    </ul>
+</div>

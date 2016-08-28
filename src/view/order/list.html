@@ -1,0 +1,38 @@
+<div class="list-wrapper">
+    <table class="list-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>私募基金</th>
+                <th>投资用户</th>
+                <th>投资金额</th>
+                <th>真实交易金额</th>
+                <th>订单状态</th>
+                <th>订单创建时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="order in order_page_list.data" ng-class-odd="'odd'">
+                <td>{{order.id}}</td>
+                <td>{{order.pe}}</td>
+                <td>{{order.username}}</td>
+                <td>{{order.investAmount}}</td>
+                <td>{{order.realTradeAmount}}</td>
+                <td>{{order_states[order.state]}}</td>
+                <td>{{order.createTime}}</td>
+                <td>
+                    <a href="javascript:void(0);" ng-click="attr.path=['订单管理', '审核订单'];$state.go('app.orders.edit', {orderId : order.id })">审核订单</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="pagebar">
+        <div class="message">共<i>&nbsp;{{order_page_list.count}}&nbsp;</i>条记录，当前显示第&nbsp;<i>{{cur_page}}&nbsp;</i>页</div>
+        <ul class="pages">
+            <li ng-repeat="i in pages" class="page-num {{ cur_page == i && 'current'}}">
+                <a href="javascript:void(0);">{{i}}</a>
+            </li>
+        </ul>
+    </div>
+</div>

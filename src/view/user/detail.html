@@ -1,0 +1,98 @@
+<div class="formbody">
+    <div class="formtitle"><span>基本信息</span></div>
+    <ul class="forminfo">
+        <li>
+            <label class="font-weight">用户名：</label>
+            <span class="input-line-height">{{user.username}}</span>
+        </li>
+        <li>
+            <label class="font-weight">头像：</label>
+            <span class="input-line-height"><img ng-if="user.avatar" ng-src="{{user.avatar}}" height="100"></span>
+        </li>
+        <li>
+            <label class="font-weight">真实姓名：</label>
+            <span class="input-line-height"><b>{{user.realName}}</b></span>
+        </li>
+        <li>
+            <label class="font-weight">身份证：</label>
+            <span class="input-line-height">{{user.idCard}}</span>
+        </li>
+        <li>
+            <label class="font-weight">证件截止日期：</label>
+            <span class="input-line-height">{{user.idCardEndTime | FormatDate:0:'-':':'}}</span>
+        </li>
+        <li>
+            <label class="font-weight">是否长期有效：</label>
+            <span ng-if="user.alwaysAvailable" class="input-line-height">是</span>
+            <span ng-if="!user.alwaysAvailable" class="input-line-height">否</span>
+        </li>
+
+        <li>
+            <label class="font-weight">手机号码：</label>
+            <span class="input-line-height">{{user.phoneNumber}}</span>
+        </li>
+
+        <li>
+            <label class="font-weight">E-mail：</label>
+            <span class="input-line-height">{{user.email}}</span>
+        </li>
+
+        <li>
+            <label class="font-weight">公司名称：</label>
+            <span class="input-line-height">{{user.company}}</span>
+        </li>
+
+        <li>
+            <label class="font-weight">是否是会员：</label>
+            <span ng-if="user.isMember" class="input-line-height">是</span>
+            <span ng-if="!user.isMember" class="input-line-height">不是</span>
+        </li>
+
+        <li ng-switch="user.gender">
+            <label class="font-weight">性别：</label>
+            <span ng-switch-when="0" class="input-line-height">男</span>
+            <span ng-switch-when="1" class="input-line-height">女</span>
+        </li>
+        <li ng-switch="user.userType">
+            <label class="font-weight">用户类型：</label>
+            <span ng-switch-when="0" class="input-line-height">普通用户(投资人)</span>
+            <span ng-switch-when="1" class="input-line-height">客户经理</span>
+        </li>
+
+        <li>
+            <label class="font-weight">可投资金额：</label>
+            <span class="input-line-height">{{availabe_fund_amount[user.availabeFundAmount]}}</span>
+        </li>
+
+        <li>
+            <label class="font-weight">银行卡：</label>
+            <span class="input-line-height">{{user.bankCard}}</span>
+        </li>
+
+        <li>
+            <label class="font-weight">开卡城市：</label>
+            <span class="input-line-height">{{user.bankCity}}</span>
+        </li>
+
+        <li>
+            <label class="font-weight">银行名称：</label>
+            <span class="input-line-height">{{user.bankName}}</span>
+        </li>
+
+        <li>
+            <label class="font-weight">用户注册时间：</label>
+            <span class="input-line-height">{{user.createTime | FormatDate:0:'-':':'}}</span>
+        </li>
+
+        <li>
+            <ul class="toolbarbtn">
+                <li class="click">
+                    <a href="javascript:void(0)" ng-click="attr.path=['用户管理', '编辑用户'];$state.go('app.users.edit', {userId: user.id})">
+                        <span class="edit"></span>修改
+                    </a>
+                </li>
+                <li class="click"><a href="javascript:history.go(-1)"><span></span>返回列表</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,43 @@
+<div class="list-wrapper">
+    <div class="tools">
+        <a href="javascript:void(0)" class="add-btn" ng-click="attr.path=['私募管理', '添加私募'];$state.go('app.pes.add')">
+            <span></span>添加
+        </a>
+    </div>
+    <table class="list-table">
+        <thead>
+            <tr>
+                    <th>ID</th>
+                    <th>基金名称</th>
+                    <th>投资用户</th>
+                    <th>收益总额</th>
+                    <th>投资总额</th>
+                    <th>币种</th>
+                    <th>起投时间</th>
+                    <th>操作</th>
+                </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>114</td>
+                <td>嘉诚汇金-恒安兴项目</td>
+                <td>林梓益</td>
+                <td>51200.00</td>
+                <td>1000000.00</td>
+                <td>人民币</td>
+                <td>2013-09-12 00:00:00</td>
+                <td>
+                    <a href="javascript:void(0)" ng-click="attr.path=['收益统计管理', '收益统计编辑'];$state.go('app.income_stats.edit', {incomeStatId: 1})">点击修改</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="pagebar">
+        <div class="message">共<i>&nbsp;{{pe_page_list.count}}&nbsp;</i>条记录，当前显示第&nbsp;<i>{{cur_page}}&nbsp;</i>页</div>
+        <ul class="pages">
+            <li ng-repeat="i in pages" class="page-num {{ cur_page == i && 'current'}}">
+                <a href="javascript:void(0);">{{i}}</a>
+            </li>
+        </ul>
+    </div>
+</div>

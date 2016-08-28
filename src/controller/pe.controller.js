@@ -11,7 +11,7 @@ class PeController {
         if ($state.includes('app.pes.list')) {
             this.getPePageList(1);
         }
-        if ($state.includes('app.pes.detail')) {
+        if ($state.includes('app.pes.edit')) {
             this.getPeDetail($stateParams.peId);
         }
     }
@@ -49,13 +49,13 @@ app_module.config(function($stateProvider, $urlRouterProvider) {
         url: 'list',
         template: require('../view/pe/list.html'),
         controller: 'PeController'
-    }).state('app.pes.detail',{
-        url: 'detail/:peId',
-        template: require('../view/pe/detail.html'),
+    }).state('app.pes.edit',{
+        url: 'edit/:peId',
+        template: require('../view/pe/edit.html'),
         controller: 'PeController'
     }).state('app.pes.add', {
         url: 'add',
-        template: require('../view/pe/detail.html'),
+        template: require('../view/pe/edit.html'),
         controller: 'PeController'
     });
 });

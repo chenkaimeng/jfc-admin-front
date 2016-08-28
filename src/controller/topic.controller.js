@@ -50,13 +50,13 @@ app_module.config(function($stateProvider, $urlRouterProvider){
         url: 'topics/list',
         template: require('../view/topic/list.html'),
         controller: 'TopicController'
-    }).state('app.topics.detail', {
-        url: 'topics/detail/:topicId',
-        template: require('../view/topic/detail.html'),
+    }).state('app.topics.edit', {
+        url: 'topics/edit/:topicId',
+        template: require('../view/topic/edit.html'),
         controller: 'TopicController'
     }).state('app.topics.add', {
         url: 'topics/add',
-        template: require('../view/topic/detail.html'),
+        template: require('../view/topic/edit.html'),
         controller: 'TopicController'
     });
 });

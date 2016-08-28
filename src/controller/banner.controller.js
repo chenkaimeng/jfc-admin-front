@@ -9,7 +9,7 @@ class BannerController {
         if ($state.includes('app.banners.list')) {
             this.getBannerPageList(1);
         }
-        if ($state.includes('app.banners.detail')) {
+        if ($state.includes('app.banners.edit')) {
             this.getBanner($stateParams.bannerId);
         }
     }
@@ -40,13 +40,13 @@ app_module.config(function($stateProvider, $urlRouterProvider) {
         url: 'list',
         template: require('../view/banner/list.html'),
         controller: 'BannerController'
-    }).state('app.banners.detail',{
-        url: 'detail/:bannerId',
-        template: require('../view/banner/detail.html'),
+    }).state('app.banners.edit',{
+        url: 'edit/:bannerId',
+        template: require('../view/banner/edit.html'),
         controller: 'BannerController'
     }).state('app.banners.add', {
         url: 'add',
-        template: require('../view/banner/detail.html'),
+        template: require('../view/banner/edit.html'),
         controller: 'BannerController'
     });
 });

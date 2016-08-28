@@ -1,0 +1,44 @@
+<div class="list-wrapper">
+    <div class="tools">
+        <a href="javascript:void(0)" class="add-btn" ng-click="attr.path=['收益明细管理', '添加收益明细'];$state.go('app.pes.add')">
+            <span></span>添加
+        </a>
+    </div>
+    <table class="list-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>所属私募基金</th>
+                <th>项目名称</th>
+                <th>收益金额</th>
+                <th>收款账号</th>
+                <th>收益用户</th>
+                <th>收益明细时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-class="odd">
+                <td>127</td>
+                <td>深圳市恒安兴纺织科技有限公司专项基金说明书</td>
+                <td>嘉诚汇金-恒安兴项目</td>
+                <td>60416.00</td>
+                <td>6226093510657406</td>
+                <td>温守珍</td>
+                <td>2014-09-28 00:00:00</td>
+                <td>
+                    <a href="javascript:void(0)" ng-click="attr.path=['收益明细管理', '编辑收益明细'];$state.go('app.income_details.edit')">编辑</a>  |
+                    <a href="javascript:;">删除</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="pagebar">
+        <div class="message">共<i>&nbsp;{{pe_page_list.count}}&nbsp;</i>条记录，当前显示第&nbsp;<i>{{cur_page}}&nbsp;</i>页</div>
+        <ul class="pages">
+            <li ng-repeat="i in pages" class="page-num {{ cur_page == i && 'current'}}">
+                <a href="javascript:void(0);">{{i}}</a>
+            </li>
+        </ul>
+    </div>
+</div>

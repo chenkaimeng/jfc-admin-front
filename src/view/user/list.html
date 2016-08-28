@@ -1,0 +1,53 @@
+<div class="list-wrapper">
+    <div class="tools">
+        <a href="javascript:void(0)" class="add-btn" ng-click="attr.path=['用户管理', '添加用户'];$state.go('app.users.add')">
+            <span></span>添加
+        </a>
+    </div>
+    <table class="list-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>头像</th>
+                <th>用户名</th>
+                <th>手机号</th>
+                <th>邮箱</th>
+                <th>真实名称</th>
+                <th>是否是会员</th>
+                <th>性别</th>
+                <th>银行卡</th>
+                <th>用户注册时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in user_page_list.data" ng-class-odd="'odd'">
+                <td>{{user.id}}</td>
+                <td>
+                    <img ng-if="user.avatar" ng-src="{{user.avatar}}" class="avatar">
+                    <span ng-if="!user.avatar">无</span>
+                </td>
+                <td>{{user.username}}</td>
+                <td>{{user.phoneNumber}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.realName}}</td>
+                <td>{{user.isMember}}</td>
+                <td>{{user.gender}}</td>
+                <td>{{user.bankCard}}</td>
+                <td>{{user.createTime}}</td>
+                <td>
+                    <a href="javascript:void(0);" ng-click="attr.path=['用户管理', '用户详情'];$state.go('app.users.detail', {userId : user.id })">详情</a>  |
+                    <a href="javascript:void(0);" ng-click="attr.path=['用户管理', '编辑用户'];$state.go('app.users.edit', {userId : user.id })">编辑</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="pagebar">
+        <div class="message">共<i>&nbsp;{{user_page_list.count}}&nbsp;</i>条记录，当前显示第&nbsp;<i>{{cur_page}}&nbsp;</i>页</div>
+        <ul class="pages">
+            <li ng-repeat="i in pages" class="page-num {{ cur_page == i && 'current'}}">
+                <a href="javascript:void(0);">{{i}}</a>
+            </li>
+        </ul>
+    </div>
+</div>

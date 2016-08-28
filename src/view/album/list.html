@@ -28,7 +28,7 @@
                 <td>{{album.state}}</td>
                 <td>
                     <a href="javascript:void(0);" ng-click="attr.path=['视频集管理', '视频集列表', '视频列表'];$state.go('app.videos.list', {albumId : album.id });">管理视频</a>  |
-                    <a href="Javascript:void(0);" ng-click="attr.path=['视频集管理', '编辑视频集'];$state.go('app.albums.detail', {albumId: album.id})">编辑</a> |
+                    <a href="Javascript:void(0);" ng-click="attr.path=['视频集管理', '编辑视频集'];$state.go('app.albums.edit', {albumId: album.id})">编辑</a> |
                     <a href="javascript:void(0);"> 删除</a>
                 </td>
             </tr>
