@@ -22,5 +22,9 @@ app_module.config(function($stateProvider, $urlRouterProvider) {
         url: 'edit/:personIncomeId',
         template: require('../view/income/person_income/edit.html'),
         controller: 'PersonIncomeController'
+    }).state('app.person_incomes.add', {
+        url: 'add',
+        template: require('../view/income/person_income/edit.html'),
+        controller: 'PersonIncomeController'
     });
 });

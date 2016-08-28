@@ -16,11 +16,15 @@ app_module.config(function($stateProvider, $urlRouterProvider) {
         url: 'income_stats/',
         template: require('../view/module.html')
     }).state('app.income_stats.list', {
-        url: 'income_stats/',
+        url: 'list/',
         template: require('../view/income/income_stat/list.html'),
         controller: 'IncomeStatController'
     }).state('app.income_stats.edit', {
-        url: 'income_stats/:incomeStatId',
+        url: 'edit/:incomeStatId',
+        template: require('../view/income/income_stat/edit.html'),
+        controller: 'IncomeStatController'
+    }).state('app.income_stats.add', {
+        url: 'add',
         template: require('../view/income/income_stat/edit.html'),
         controller: 'IncomeStatController'
     });
