@@ -7,25 +7,25 @@
     <table class="list-table">
         <thead>
             <tr>
-                    <th>ID</th>
-                    <th>基金名称</th>
-                    <th>投资用户</th>
-                    <th>收益总额</th>
-                    <th>投资总额</th>
-                    <th>币种</th>
-                    <th>起投时间</th>
-                    <th>操作</th>
-                </tr>
+                <th>ID</th>
+                <th>基金名称</th>
+                <th>投资用户</th>
+                <th>收益总额</th>
+                <th>投资总额</th>
+                <th>币种</th>
+                <th>起投时间</th>
+                <th>操作</th>
+            </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>114</td>
-                <td>嘉诚汇金-恒安兴项目</td>
-                <td>林梓益</td>
-                <td>51200.00</td>
-                <td>1000000.00</td>
-                <td>人民币</td>
-                <td>2013-09-12 00:00:00</td>
+            <tr ng-repeat="income_stat in income_stat_page_list.data">
+                <td>{{income_stat.id}}</td>
+                <td>{{income_stat.peName}}</td>
+                <td>{{income_stat.username}}</td>
+                <td>{{income_stat.totalIncome}}</td>
+                <td>{{income_stat.totalInvest}}</td>
+                <td>{{CURRENCY[income_stat.currency]}}</td>
+                <td>{{income_stat.investStartTime | FormatDate:0:'-':':'}}</td>
                 <td>
                     <a href="javascript:void(0)" ng-click="attr.path=['收益统计管理', '收益统计编辑'];$state.go('app.income_stats.edit', {incomeStatId: 1})">点击修改</a>
                 </td>
@@ -33,7 +33,7 @@
         </tbody>
     </table>
     <div class="pagebar">
-        <div class="message">共<i>&nbsp;{{pe_page_list.count}}&nbsp;</i>条记录，当前显示第&nbsp;<i>{{cur_page}}&nbsp;</i>页</div>
+        <div class="message">共<i>&nbsp;{{income_stat_page_list.count}}&nbsp;</i>条记录，当前显示第&nbsp;<i>{{cur_page}}&nbsp;</i>页</div>
         <ul class="pages">
             <li ng-repeat="i in pages" class="page-num {{ cur_page == i && 'current'}}">
                 <a href="javascript:void(0);">{{i}}</a>

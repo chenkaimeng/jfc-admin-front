@@ -17,13 +17,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>34</td>
-                <td>嘉诚蓝峰数字营销产业基金</td>
-                <td>蓝峰基金-世鳌项目【股权】</td>
-                <td>60000000</td>
-                <td>人民币</td>
-                <td>2016-08-05 02:11:09</td>
+            <tr ng-repeat="project in project_page_list.data">
+                <td>{{project.id}}</td>
+                <td>{{project.peName}}</td>
+                <td>{{project.name}}</td>
+                <td>{{project.investAmount}}</td>
+                <td>{{CURRENCY[project.currency]}}</td>
+                <td>{{project.createTime | FormatDate:0:'-':':'}}</td>
                 <td>
                     <a href="javascript:void(0)" ng-click="attr.path=['投资项目管理', '编辑投资项目'];$state.go('app.projects.edit', {projectId: 1})">编辑</a>  |
                     <a href="javascript:void(0);">删除</a>
@@ -32,7 +32,7 @@
         </tbody>
     </table>
     <div class="pagebar">
-        <div class="message">共<i>&nbsp;{{pe_page_list.count}}&nbsp;</i>条记录，当前显示第&nbsp;<i>{{cur_page}}&nbsp;</i>页</div>
+        <div class="message">共<i>&nbsp;{{project_page_list.count}}&nbsp;</i>条记录，当前显示第&nbsp;<i>{{cur_page}}&nbsp;</i>页</div>
         <ul class="pages">
             <li ng-repeat="i in pages" class="page-num {{ cur_page == i && 'current'}}">
                 <a href="javascript:void(0);">{{i}}</a>

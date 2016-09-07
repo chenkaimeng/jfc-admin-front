@@ -3,3 +3,8 @@
         width: 100%;
         position: absolute;
 }
+@mixin login-input($image-url) {
+    width: 299px; height: 48px; background: url($image-url) no-repeat;
+    background-color: transparent;
+    border: none; line-height: 48px; padding-left: 44px; font-size: 14px; font-weight: bold;
+}

@@ -1,1 +1,21 @@
-<div>登录页</div>
+<div class="logintop">
+    <span>欢迎登录后台管理界面平台</span>
+</div>
+<div class="loginbody">
+    <span class="systemlogo"></span>
+    <div class="loginbox">
+        <ul>
+            <li><input type="text" class="loginuser" placeholder="请输入账号" autocomplete="off"></li>
+            <li><input type="password" class="loginpwd" placeholder="请输入登陆密码"></li>
+            <li class="yzm">
+                <span><input name="VerifyCode" type="text" id="loginyzm" placeholder="请输入验证码"></span>
+                <cite><img src="/static/admin/img/codeimage.png" class="verifyimg" onclick="ChangeVerify()"></cite>
+            </li>
+            <li>
+                <input type="button" class="loginbtn" value="登录" id="submit_btn">
+                <label id="tishi"></label>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="loginbm">版权所有  2016  &nbsp;&nbsp;</div>

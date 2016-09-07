@@ -2,34 +2,46 @@
     <div class="formtitle"><span>填写私募信息</span></div>
     <ul class="forminfo">
         <li>
-            <label>基金名称</label>
-            <input type="text" class="dfinput" placeholder="请输入基金名称">
+            <label>选择私募基金</label>
+            <select class="select1" ng-model="income_stat.peId">
+                <option value="-1">请选择一个私募基金</option>
+                <option value="42">嘉诚蓝峰数字营销产业基金</option>
+                <option value="49">华盛顿州贝灵汉地产项目简介</option>
+                <option value="52">中国高净值人群全球资产管理专业机构 新三板第一股定增说明书</option>
+                <option value="53">嘉富诚鲍斯股份定增基金产品 招募说明书</option>
+            </select>
         </li>
         <li>
-            <label>投资用户</label>
-            <input type="text" class="dfinput" placeholder="请输入用户名称">
+            <li>
+                <label>选择投资用户</label>
+                <select class="select1"  ng-model="income_stat.userId">
+                    <option value="25">aacon</option>
+                    <option value="26">gaoshunsheng</option>
+                    <option value="27">橘子</option>
+                    <option value="28">安成超</option>
+                    <option value="29">安新琼</option>
+                </select>
+            </li>
         </li>
         <li>
             <label>收益总额</label>
-            <input type="text" class="dfinput" placeholder="请输入收益总额">
+            <input type="text" class="dfinput" placeholder="请输入收益总额" ng-model="income_stat.totalIncome">
         </li>
         <li>
             <label>投资总额</label>
-            <input type="text" class="dfinput" placeholder="请输入投资总额">
-        </li>
-        <li>
-            <label>募集总额</label>
-            <input type="text" class="dfinput" ng-model="pe.totalAmount" placeholder="请输入募集总额，必须为数字">&nbsp;元
+            <input type="text" class="dfinput" placeholder="请输入投资总额" ng-model="income_stat.totalInvest">
         </li>
         <li>
             <label>币种</label>
             <cite>
-                <span ng-repeat="(k, v) in CURRENCY"><input name="currency" type="radio" value="{{k}}">{{v}}</span>
+                <span ng-repeat="(k, v) in CURRENCY">
+                    <input name="currency" type="radio" value="{{k}}" ng-model="income_stat.currency">{{v}}
+                </span>
             </cite>
         </li>
         <li>
             <label>起投时间</label>
-            <input type="text" class="dfinput" ng-model="pe" date-time date-converter view="date">{{v}}
+            <input type="text" class="dfinput" ng-model="income_stat.investStartTime" date-time date-converter view="date">{{v}}
         </li>
         <li>
             <label>&nbsp;</label>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>嘉富诚信息管理后台</title>
 </head>
-    <body ng-app="app" ng-controller="AppController">
+    <body ng-app="app" ng-controller="AppController" ng-class="(!admin || !admin.id) && 'login'">
         <ui-view></ui-view>
     </body>
 </html>
